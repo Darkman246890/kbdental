@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K.B. Dental Care – Premium Dental Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+:root {
+  --bg: #f0f4f8; --card: #ffffff; --ink: #0f172a; --mute: #64748b;
+  --line: #e2e8f0; --brand: #0ea5e9; --brand-hover: #0284c7; --brand-light: #e0f2fe;
+  --teal: #14b8a6; --sun: #f59e0b; --bad: #ef4444; --ok: #10b981;
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.01);
+  --shadow-lg: 0 25px 50px -12px rgba(14, 165, 233, 0.25);
+  --shadow-dark: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
+  --radius: 24px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background-color: var(--bg); color: var(--ink);
+  font-family: "Hind Siliguri", "Poppins", system-ui, sans-serif; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(at 0% 0%, hsla(189,93%,85%,0.4) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(355,85%,93%,0.4) 0, transparent 50%);
+  background-attachment: fixed;
+}
+.top {
+  position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  display: flex; gap: 16px; align-items: center; padding: 16px 24px; box-shadow: var(--shadow-sm);
+}
+.logo-area { display: flex; align-items: center; gap: 8px; margin-right: auto; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 22px; color: var(--brand); text-decoration: none; letter-spacing: -0.5px;}
+.nav-links { display: flex; gap: 24px; font-weight: 600;}
+.nav-links a { color: var(--mute); text-decoration: none; transition: color 0.2s; font-size: 15px;}
+.nav-links a:hover { color: var(--brand); }
+.btn {
+  font-family: inherit; border: none; background: var(--brand); color: #fff;
+  border-radius: 99px; padding: 12px 24px; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+}
+.btn:hover { background: var(--brand-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4); }
+.btn.outline { background: transparent; border: 2px solid var(--brand); color: var(--brand); box-shadow: none;}
+.btn.outline:hover { background: var(--brand-light); }
+.btn.sun { background: var(--sun); color: #fff; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);}
+.btn.sun:hover { background: #d97706; }
+.btn-sm { padding: 8px 16px; font-size: 14px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px 80px; }
+section { padding: 60px 0; }
+h2 { font-family: "Poppins", sans-serif; font-size: 38px; margin: 0 0 20px; color: var(--ink); text-align: center; font-weight: 800; letter-spacing: -1px;}
+.section-subtitle { text-align: center; color: var(--mute); font-size: 18px; max-width: 600px; margin: 0 auto 40px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: stretch; padding: 40px 0 20px; }
+.hero-text-col { display: flex; flex-direction: column; justify-content: center;}
+.hero-text-col h1 { font-family: "Poppins", sans-serif; font-size: clamp(40px, 5vw, 56px); line-height: 1.1; margin: 0 0 16px; color: var(--ink); font-weight: 800; letter-spacing: -1.5px;}
+.hero-text-col h1 span { color: var(--brand); }
+.hero-text-col p { font-size: 18px; color: var(--mute); margin-bottom: 30px; line-height: 1.7;}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 30px;}
+
+.live-card { 
+  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); 
+  border-radius: var(--radius); padding: 30px; 
+  box-shadow: var(--shadow-dark); color: white;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.live-card::before { 
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; 
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 60%); 
+  pointer-events: none;
+}
+.live-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; position: relative; z-index: 1;}
+.live-indicator { width: 12px; height: 12px; background: var(--ok); border-radius: 50%; animation: pulse 2s infinite; box-shadow: 0 0 15px var(--ok);}
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); } 70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+.now-serving-text { font-size: 14px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;}
+.now-serving-number { font-size: 56px; font-family: "Poppins", sans-serif; color: #fff; font-weight: 800; line-height: 1; text-shadow: 0 4px 15px rgba(255,255,255,0.2);}
+.turn-msg { position: relative; z-index: 1;}
+
+.hero-image-col { display: flex; flex-direction: column;}
+.hero-image-wrapper { 
+  position: relative; border-radius: var(--radius); overflow: hidden; 
+  box-shadow: var(--shadow-lg); flex-grow: 1; min-height: 400px;
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+}
+.hero-image-wrapper img { 
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.5s ease;
+}
+.hero-image-wrapper:hover img { transform: scale(1.03); }
+.doctor-overlay { 
+  position: absolute; bottom: 0; left: 0; right: 0; 
+  padding: 60px 24px 24px; 
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%); 
+  color: #fff;
+}
+.doctor-overlay h3 { margin: 0 0 4px; font-family: "Poppins", sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;}
+.doctor-overlay p { margin: 0; font-size: 14px; color: #cbd5e1; }
+.doc-rating { 
+  margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; 
+  background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); 
+  padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; color: #fbbf24;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.form-card { background: var(--card); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-lg); border: 1px solid rgba(226, 232, 240, 0.8); max-width: 850px; margin: 0 auto; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;}
+.form-group label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 10px; color: var(--ink); }
+input, select, textarea { font-family: inherit; width: 100%; padding: 16px; border: 2px solid var(--line); border-radius: 14px; background: #f8fafc; color: var(--ink); font-size: 16px; transition: all 0.2s;}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px var(--brand-light); background: #fff;}
+
+.tx-list-container { margin-bottom: 30px; display: flex; flex-direction: column; gap: 12px;}
+.tx-item { background: #fff; border: 2px solid var(--line); border-radius: 16px; transition: all 0.3s ease; overflow: hidden; cursor: pointer;}
+.tx-item:hover { border-color: #cbd5e1; transform: translateY(-2px); box-shadow: var(--shadow-sm);}
+.tx-item.selected { border-color: var(--brand); background: #f0f9ff; box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);}
+.tx-header { display: flex; align-items: center; padding: 20px;}
+.tx-check { width: 26px; height: 26px; accent-color: var(--brand); flex-shrink: 0; margin: 0 16px 0 0; cursor: pointer; border-radius: 8px;}
+.tx-info { display: flex; flex-direction: column; flex-grow: 1;}
+.tx-name { font-weight: 700; font-size: 18px; color: var(--ink); line-height: 1.3;}
+.tx-price { font-size: 14px; color: var(--brand); font-weight: 700; background: var(--brand-light); padding: 4px 12px; border-radius: 8px; display: inline-block; margin-top: 8px; width: fit-content;}
+.tx-qty-area { display: none; padding: 0 20px 20px 62px; align-items: center; justify-content: space-between; animation: fadeIn 0.3s ease; border-top: 1px dashed #bae6fd; padding-top: 20px; margin-top: 10px;}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+.tx-item.selected .tx-qty-area { display: flex; }
+.qty-label { font-weight: 700; color: var(--brand); font-size: 16px; }
+.premium-stepper { display: flex; align-items: center; background: #fff; border: 2px solid var(--brand); border-radius: 12px; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);}
+.step-btn { width: 44px; height: 44px; border: none; background: transparent; color: var(--brand); font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s;}
+.step-btn:hover { background: var(--brand-light); }
+.step-input { width: 50px; height: 44px; text-align: center; border: none; border-left: 2px solid var(--brand-light); border-right: 2px solid var(--brand-light); font-weight: 800; font-size: 20px; color: var(--ink); background: transparent;}
+
+.summary-box { background: linear-gradient(to right, #f8fafc, #f1f5f9); border-radius: 16px; padding: 24px; margin-bottom: 30px; border: 2px dashed var(--line);}
+.summary-title { font-weight: 800; color: var(--ink); margin-bottom: 16px; display: block; font-size: 18px; border-bottom: 2px solid var(--line); padding-bottom: 12px;}
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px; font-weight: 600;}
+.summary-total { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--line); font-weight: 800; font-size: 24px; color: var(--brand);}
+
+.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px;}
+.pay-card { border: 2px solid var(--line); border-radius: 16px; padding: 24px; cursor: pointer; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transition: all 0.2s; background: #fff;}
+.pay-card input { display: none; }
+.pay-card.active { border-color: var(--brand); background: #f0f9ff; box-shadow: 0 10px 25px rgba(14, 165, 233, 0.15); transform: translateY(-2px);}
+.pay-icon { font-size: 36px; }
+.pay-title { font-weight: 700; color: var(--ink); font-size: 17px;}
+
+.checkbox-label { display: flex; align-items: center; gap: 16px; font-weight: 500; font-size: 15px; color: var(--mute); margin: 24px 0; cursor: pointer; background: #f8fafc; padding: 20px; border-radius: 16px; border: 1px solid var(--line); transition: all 0.2s;}
+.checkbox-label:hover { border-color: #cbd5e1; background: #fff;}
+.checkbox-label input { width: 24px; height: 24px; margin: 0; flex-shrink: 0; cursor: pointer; accent-color: var(--brand);}
+
+.gallerySwiper, .teamSwiper { width: 100%; padding: 20px 0 60px 0; overflow: hidden; }
+.gallerySwiper .swiper-slide, 
+.teamSwiper .swiper-slide { 
+  width: 280px; 
+  height: 380px; 
+  border-radius: 24px; 
+  overflow: hidden; 
+  transition: all 0.5s ease; 
+  opacity: 0.4; 
+  transform: scale(0.85); 
+  filter: blur(2px); 
+  background: #fff; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.gallerySwiper .swiper-slide img { 
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.gallerySwiper .swiper-slide-active,
+.teamSwiper .swiper-slide-active { 
+  opacity: 1; 
+  transform: scale(1.05); 
+  filter: blur(0); 
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.3); 
+  border: 4px solid var(--brand); 
+  z-index: 10; 
+}
+.gallerySwiper .swiper-button-next, .gallerySwiper .swiper-button-prev,
+.teamSwiper .swiper-button-next, .teamSwiper .swiper-button-prev { 
+  color: var(--brand) !important; background: #ffffff; width: 50px !important; height: 50px !important; 
+  border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; 
+}
+.gallerySwiper .swiper-button-next:hover, .gallerySwiper .swiper-button-prev:hover,
+.teamSwiper .swiper-button-next:hover, .teamSwiper .swiper-button-prev:hover { 
+  background: var(--brand); color: #ffffff !important; transform: scale(1.1); 
+}
+.gallerySwiper .swiper-button-next::after, .gallerySwiper .swiper-button-prev::after,
+.teamSwiper .swiper-button-next::after, .teamSwiper .swiper-button-prev::after { 
+  font-size: 20px !important; font-weight: bold; 
+}
+
+.team-card { cursor: pointer; width: 100%; height: 100%; position: relative; display: flex; flex-direction: column; background: #fff; overflow: hidden; }
+.team-img-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.team-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.teamSwiper .swiper-slide-active .team-img-wrapper img { transform: scale(1.08); }
+.team-img-wrapper::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 75%; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 40%, transparent 100%); }
+.team-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 25px 20px; z-index: 2; text-align: center; transition: all 0.4s ease; }
+.team-info h3 { margin: 0 0 5px; font-family: 'Poppins', sans-serif; font-size: 22px; color: #fff; font-weight: 800; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: -0.5px; }
+.team-info p.role { color: var(--brand-light); font-weight: 700; font-size: 13px; margin-bottom: 0; text-transform: uppercase; letter-spacing: 1px; }
+.team-details { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; text-align: left; }
+.team-card.expanded .team-details { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2); }
+.team-details p { color: #cbd5e1; font-size: 13px; line-height: 1.6; margin: 0; font-weight: 500; }
+.team-details::before { content: 'ℹ️ Details'; display: block; font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 5px; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.contact-card { background: var(--card); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-md); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 28px;}
+.info-row { display: flex; gap: 20px; align-items: flex-start;}
+.info-icon { background: linear-gradient(135deg, var(--brand-light), #f0f9ff); color: var(--brand); width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);}
+.info-text h4 { margin: 0 0 6px; font-size: 13px; color: var(--mute); text-transform: uppercase; font-weight: 800; letter-spacing: 1px;}
+.info-text p { margin: 0; font-weight: 700; font-size: 16px; color: var(--ink); line-height: 1.5;}
+.map-container { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--line); min-height: 300px; background: var(--brand-light); display: flex; align-items: center; justify-content: center; position: relative;}
+.map-container iframe { width: 100%; height: 100%; border: none; position: absolute; top: 0; left: 0; }
+
+footer { background: #ffffff; color: var(--mute); padding: 80px 20px 40px; text-align: center; margin-top: 60px; border-top: 1px solid var(--line); position: relative;}
+.footer-title { font-size: 38px; font-weight: 800; font-family: "Poppins", sans-serif; letter-spacing: -1.5px; margin-bottom: 10px; background: linear-gradient(135deg, var(--brand) 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;}
+footer p { margin: 5px 0; font-weight: 500; font-size: 16px; }
+.social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background: #ffffff; color: var(--mute); text-decoration: none; font-size: 24px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid var(--line); box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.social-links a:hover { transform: translateY(-8px) scale(1.1); color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.social-links a.wa:hover { background: #25D366; border-color: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+.social-links a.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); }
+.social-links a.fb:hover { background: #1877F2; border-color: #1877F2; box-shadow: 0 0 20px rgba(24, 119, 242, 0.4); }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 15px 0; box-shadow: var(--shadow-sm); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-block; border-radius: 99px; padding: 6px 14px; font-size: 13px; font-weight: 700; background: var(--brand-light); color: var(--brand);}
+.mute { color: var(--mute); font-size: 14px; }
+.warn { background: #fffbeb; color: #b45309; border-radius: 12px; padding: 15px; font-size: 14px; margin: 15px 0; border: 1px solid #fde68a;}
+.badge{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:4px 12px;font-size:12px;font-weight:700;background:var(--brand-light);color:var(--brand)}
+.badge-danger{background:#fee2e2;color:#b91c1c}
+.badge-success{background:#d1fae5;color:#047857}
+.badge-warning{background:#fef3c7;color:#b45309}
+.pill.ok{background:#d1fae5;color:#047857}
+.pill.bad{background:#fee2e2;color:#b91c1c}
+.ok-box{background:#ecfdf5;border:1px solid var(--ok);border-radius:16px;padding:20px}
+.error-text{display:none;color:var(--bad);font-weight:600;margin:0 0 16px; padding: 12px 16px; border-radius: 10px; background: #fef2f2; border: 1px solid var(--bad); line-height: 1.5;}
+
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+  background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(5px);
+  z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px;
+}
+.modal-box {
+  background: #fff; border-radius: 24px; padding: 30px; width: 100%; max-width: 420px; 
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); position: relative;
+  animation: modalSlide 0.3s ease-out;
+}
+@keyframes modalSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-close { position: absolute; top: 15px; right: 15px; background: #f1f5f9; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 16px; cursor: pointer; color: var(--mute); display: flex; align-items: center; justify-content: center; transition: all 0.2s;}
+.modal-close:hover { background: #e2e8f0; color: var(--ink); transform: rotate(90deg); }
+.qr-wrapper { display: inline-block; padding: 10px; background: #f8fafc; border: 2px dashed var(--line); border-radius: 16px; margin-bottom: 15px; }
+.qr-wrapper img { width: 180px; height: 180px; object-fit: contain; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 40px;}
+  .hero-actions { justify-content: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; } 
+  .wrap { padding: 0 16px 40px; }
+  .form-card { padding: 24px; }
+  .tx-qty-area { padding: 15px 20px 15px 20px; flex-direction: column; align-items: stretch; gap: 15px; }
+  .premium-stepper { justify-content: space-between; }
+  .payment-grid { grid-template-columns: 1fr; }
+  .live-card { text-align: left; }
+  .hero-image-wrapper { min-height: 400px; }
+  .gallerySwiper .swiper-slide, .teamSwiper .swiper-slide { width: 240px; height: 320px; }
+  .footer-title { font-size: 30px; }
+  .modal-box { padding: 24px 20px; }
+}
+
+/* ===== Live queue status (patient view) ===== */
+.qs { position: relative; z-index: 1; border-radius: 22px; padding: 18px; margin-top: 6px; border: 1.5px solid; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+.qs-head { display: flex; gap: 14px; align-items: flex-start; }
+.qs-ico { font-size: 34px; line-height: 1; flex: 0 0 auto; }
+.qs-title { margin: 0; font-size: 22px; font-weight: 800; line-height: 1.25; font-family: "Poppins", "Hind Siliguri", sans-serif; letter-spacing: -0.2px; }
+.qs-sub { margin: 5px 0 0; font-size: 15px; line-height: 1.5; opacity: .92; }
+.qs-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
+.qs-stat { background: rgba(0,0,0,.28); border-radius: 16px; padding: 10px 12px; text-align: center; }
+.qs-stat small { display: block; font-size: 12.5px; font-weight: 600; opacity: .85; }
+.qs-stat b { display: block; font-family: "Poppins", sans-serif; font-size: 38px; font-weight: 800; line-height: 1.1; margin-top: 2px; word-break: break-word; }
+.qs-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 18px; border-radius: 14px; background: #fff; color: #b91c1c; font-weight: 800; font-size: 16px; text-decoration: none; }
+.qs-note { position: relative; z-index: 1; margin-top: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(239,68,68,.16); border: 1px solid rgba(248,113,113,.6); color: #fecaca; font-size: 14px; font-weight: 600; }
+.qs-turn { background: rgba(16,185,129,.2); border-color: #10b981; color: #d1fae5; }
+.qs-next { background: rgba(245,158,11,.2); border-color: #f59e0b; color: #fef3c7; }
+.qs-wait { background: rgba(14,165,233,.18); border-color: #38bdf8; color: #e0f2fe; }
+.qs-miss { background: rgba(239,68,68,.18); border-color: #f87171; color: #fee2e2; }
+
+.tk-wrap { position: relative; z-index: 1; margin-top: 16px; padding: 16px; background: #fff; border-radius: 20px; color: var(--ink); }
+.tk-title { font-weight: 800; font-size: 15px; margin-bottom: 12px; }
+.tk-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.tk { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 14px; border: 1.5px solid; }
+.tk-num { text-align: center; min-width: 48px; }
+.tk-num small { display: block; font-size: 11.5px; font-weight: 600; opacity: .8; }
+.tk-num b { display: block; font-family: "Poppins", sans-serif; font-size: 32px; font-weight: 800; line-height: 1.1; }
+.tk-info { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+.tk-chip { font-size: 12.5px; font-weight: 800; padding: 3px 10px; border-radius: 99px; background: rgba(255,255,255,.8); }
+.tk-time { font-size: 13px; font-weight: 700; color: var(--ink); }
+.tk-wait { background: #e0f2fe; border-color: #38bdf8; color: #0369a1; }
+.tk-ok   { background: #ecfdf5; border-color: #10b981; color: #047857; }
+.tk-bad  { background: #fef2f2; border-color: #ef4444; color: #b91c1c; }
+.tk-done { background: #f0fdf4; border-color: #86efac; color: #15803d; }
+@media (max-width: 480px) {
+  .qs-title { font-size: 20px; }
+  .qs-stat b { font-size: 34px; }
+}
+
+/* ===== Re-entry request + doctor-waiting states ===== */
+.qs-call { background: rgba(245,158,11,.24); border-color: #fbbf24; color: #fffbeb; animation: callglow 2s infinite; }
+.qs-treat { background: rgba(20,184,166,.2); border-color: #2dd4bf; color: #ccfbf1; }
+@keyframes callglow { 0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,.45); } 50% { box-shadow: 0 0 0 10px rgba(251,191,36,0); } }
+button.qs-btn { border: 0; cursor: pointer; font-family: inherit; width: 100%; }
+.qs-btn.alt { background: #16a34a; color: #fff; border: 0; font-weight: 800; }
+.qs-linkbtn { background: none; border: 0; padding: 0; color: #fff; font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer; }
+.tk-call { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+@media (prefers-reduced-motion: reduce) { .qs-call { animation: none; } }
+</style>
+</head>
+<body>
+<div class="top">
+  <a href="#" class="logo-area">🦷 <span id="brandName">K.B. Dental Care</span></a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#book">Book</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="btn btn-sm sun" onclick="togL()" id="lg">English</button>
+</div>
+<div class="wrap" id="app"><div style="text-align:center; padding:50px; font-size:20px; font-weight:bold; color:var(--brand);">Connecting to Firebase...</div></div>
+
+<div id="pay-modal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="cancelPayment()">✕</button>
+    <div style="text-align: center;">
+      <h3 style="margin-top:0; color:var(--brand); font-weight:800; font-size:22px;">Complete Your Payment</h3>
+      <p class="mute" style="font-size:14px; margin-bottom:15px;">${T('বুকিং কনফার্ম করতে নিচের পেমেন্ট সম্পন্ন করুন।', 'Complete the payment below to confirm your booking.')}</p>
+      
+      <div style="font-size:32px; font-weight:800; color:var(--ink); margin-bottom:20px;" id="pay-amount">₹0</div>
+      
+      <div id="qr-section" style="display:none;">
+        <div class="qr-wrapper" id="qrcode-container"></div>
+        <p style="font-size:13px; color:var(--mute); margin-bottom:15px;">${T('QR স্ক্যান করে পেমেন্ট করুন', 'Scan QR to pay')}</p>
+      </div>
+
+      <div id="upi-app-section" style="display:none;">
+        <a href="#" id="upi-app-link" target="_blank" class="btn" style="background:#10b981; color:#fff; width:100%; margin-bottom:15px; padding:14px; font-size:16px;">📱 ${T('UPI অ্যাপ দিয়ে পেমেন্ট করুন', 'Pay via UPI App')}</a>
+      </div>
+
+      <div style="margin-top:20px; text-align:left; background:#f8fafc; padding:15px; border-radius:12px; border:1px solid var(--line);">
+        <label style="font-weight:700; font-size:13px; margin-bottom:8px; display:block; color:var(--ink);">${T('পেমেন্টের পর UTR / Transaction ID দিন:', 'Enter UTR / Transaction ID after payment:')}</label>
+        <input type="text" id="utr-input" placeholder="e.g. 123456789012" style="padding:12px; font-size:15px; background:#fff; border-color:var(--brand-light);">
+      </div>
+
+      <button class="btn btn-ok" onclick="confirmPayment()" style="width:100%; padding:16px; font-size:16px; margin-top:15px;">✅ ${T('পেমেন্ট নিশ্চিত করুন', 'Confirm Payment')}</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { initializeFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDgZwqUWSXTYJZLbJLre4GxjbZk0g64Q8E",
+    authDomain: "store-manager-fa525.firebaseapp.com",
+    projectId: "store-manager-fa525",
+    storageBucket: "store-manager-fa525.firebasestorage.app",
+    messagingSenderId: "44180122710",
+    appId: "1:44180122710:web:5a9d26e4ef57fbaea91ff7",
+    measurementId: "G-4FWNHZC4GP"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = initializeFirestore(app, {
+    experimentalForceLongPolling: true,
+    useFetchStreams: false
+  });
+
+  window.fireDB = db;
+  window.fireDoc = doc;
+  window.fireSetDoc = setDoc;
+  window.fireOnSnapshot = onSnapshot;
+</script>
+
+<script>
+let S=null;
+const pad=n=>String(n).padStart(2,'0');
+const ds=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const TODAY=ds(new Date());
+
+// ✅ FIX: me is now stored per-device in localStorage (NOT in Firestore)
+let MY_PHONE = '';
+try { MY_PHONE = localStorage.getItem('clinic_me') || ''; } catch(e) {}
+function setMyPhone(p) {
+  MY_PHONE = p || '';
+  try {
+    if (MY_PHONE) localStorage.setItem('clinic_me', MY_PHONE);
+    else localStorage.removeItem('clinic_me');
+  } catch(e) {}
+  if (S) S.me = MY_PHONE;
+}
+
+// ✅ FIX: strip 'me' before saving to Firestore
+const save = async () => {
+  if (!window.fireDB || !S) return false;
+  try {
+    const dataToSave = { ...S };
+    delete dataToSave.me;
+    await window.fireSetDoc(window.fireDoc(window.fireDB, "clinicData", "main"), dataToSave);
+    return true;
+  } catch(e) { console.error("Firebase Save Error:", e); return false; }
+};
+
+let V='site',TAB='doc',ADM=false,AD=TODAY,Q='',B_TX=new Map(),CONF=null,CHK=null;
+const T=(b,e)=>S && S.lang==='bn'?b:e;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const closed=d=>new Date(d+'T00:00').getDay()===1||(S && S.holidays.includes(d));
+const R=id=>S.rates.find(r=>r.id==id);
+const rn=r=>S.lang==='bn'?r.bn:r.en;
+const rt=r=>r.c?T('দেখার পর','After exam'):(r.min==r.max?'₹'+r.min:'₹'+r.min+' – ₹'+r.max);
+const PT=r=>r.pt!==undefined?!!r.pt:[2,3,5,6].includes(r.id);
+const ADV=()=>S.adv||100;
+const fmt=(r,q)=>{if(r.c)return T('দেখার পর','After exam');const a=r.min*q,b=r.max*q;return a==b?'₹'+a:'₹'+a+' – ₹'+b};
+const STS=['Pending','Confirmed','Waiting','In Treatment','Done','Cancelled','No-show'];
+
+const holLabel = d => (S.holidayLabels && S.holidayLabels[d]) || '';
+const isMon = d => new Date(d+'T00:00').getDay() === 1;
+function dayName(d){
+  const bn=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+  const en=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  return (S.lang==='bn'?bn:en)[new Date(d+'T00:00').getDay()];
+}
+function holDateText(d){
+  const dt=new Date(d+'T00:00');
+  const mb=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+  const me=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const m=S.lang==='bn'?mb:me;
+  return `${dayName(d)}, ${dt.getDate()} ${m[dt.getMonth()]} ${dt.getFullYear()}`;
+}
+
+const SLOT=10;
+const t2m=t=>{const p=String(t).split(':').map(Number);return p[0]*60+p[1]};
+const m2t=m=>pad(Math.floor(m/60))+':'+pad(m%60);
+const t12=t=>{let p=String(t).split(':').map(Number),h=p[0];const ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+pad(p[1])+' '+ap};
+const FREE_ST=['Cancelled','No-show'];
+const byTime=(a,b)=>(a.time?t2m(a.time):9999)-(b.time?t2m(b.time):9999)||a.serial-b.serial;
+function txDur(txs){let m=0;(txs||[]).forEach(t=>{const r=R(t.id);if(r)m+=(r.dur||0)*(PT(r)?(t.qty||1):1)});m=Math.max(SLOT,Math.min(60,m));return Math.ceil(m/SLOT)*SLOT}
+
+const hoursFor=d=>(S.dayHours&&S.dayHours[d])||{open:S.slotOpen,close:S.slotClose};
+
+function clinicDayStatus(date){
+  const hh = hoursFor(date);
+  const openM = t2m(hh.open);
+  const closeM = t2m(hh.close);
+  const now = new Date();
+  const nowM = now.getHours()*60 + now.getMinutes();
+  if(closed(date)) return { state: 'closed', openM, closeM, nowM };
+  if(date === TODAY){
+    if(nowM >= closeM) return { state: 'after_close', openM, closeM, nowM };
+    if(nowM < openM)   return { state: 'before_open', openM, closeM, nowM };
+    return { state: 'open', openM, closeM, nowM };
+  }
+  return { state: 'future', openM, closeM, nowM };
+}
+
+function noSlotReason(date, dur){
+  const st = clinicDayStatus(date);
+  const hh = hoursFor(date);
+  if(st.state === 'closed'){
+    const reason = holLabel(date) || (isMon(date) ? T('সাপ্তাহিক বন্ধ','Weekly off') : '');
+    return { reason: 'closed', msg: T('🚫 আজ ' + S.info.name + ' বন্ধ' + (reason ? ' — ' + reason : '') + '। অনুগ্রহ করে অন্য কোনো তারিখ বেছে নিন।', '🚫 ' + S.info.name + ' is closed today' + (reason ? ' — ' + reason : '') + '. Please choose another date.') };
+  }
+  if(st.state === 'after_close'){
+    return { reason: 'after_close', msg: T('🏪 আজকের জন্য ' + S.info.name + ' বন্ধ হয়ে গেছে (ক্লোজিং: ' + t12(hh.close) + ')। অনুগ্রহ করে কাল বা অন্য কোনো তারিখ বুক করুন।', '🏪 ' + S.info.name + ' has closed for today (closing: ' + t12(hh.close) + '). Please book for tomorrow or another date.') };
+  }
+  return { reason: 'ok', msg: '' };
+}
+
+function getBookingTime(date){
+  const hh = hoursFor(date);
+  const list = S.appts.filter(a => a.date === date && a.time && !['Cancelled', 'No-show'].includes(a.st)).sort(byTime);
+  if (list.length === 0) return hh.open; 
+  const last = list[list.length - 1];
+  let nextM = t2m(last.time) + (last.dur || SLOT);
+  const closeM = t2m(hh.close);
+  const openM = t2m(hh.open);
+  if (nextM >= closeM) nextM = closeM - SLOT;
+  if (nextM < openM) nextM = openM;
+  return m2t(nextM);
+}
+
+function defaultBookingDate(){
+  const st = clinicDayStatus(TODAY);
+  if(st.state === 'after_close' || st.state === 'closed'){
+    let d = addDays(TODAY, 1);
+    for(let i=0; i<14; i++){ if(!closed(d)) return d; d = addDays(d, 1); }
+  }
+  return TODAY;
+}
+
+function checkDateWarning(){
+  const dEl = document.getElementById('bd');
+  const w = document.getElementById('dateWarning');
+  if(!dEl || !w) return;
+  const d = dEl.value;
+  if(!d){ w.style.display = 'none'; return; }
+  const st = clinicDayStatus(d);
+  const hh = hoursFor(d);
+
+  if(st.state === 'closed'){
+    w.style.display = 'block'; w.style.background = '#fef2f2'; w.style.borderColor = 'var(--bad)'; w.style.color = 'var(--bad)';
+    w.innerHTML = '🚫 ' + T('এই দিন ' + S.info.name + ' বন্ধ', S.info.name + ' is closed on this day') + (holLabel(d) ? ' — ' + esc(holLabel(d)) : (isMon(d) ? ' — ' + T('সাপ্তাহিক বন্ধ','Weekly off') : ''));
+  } else if(st.state === 'after_close'){
+    w.style.display = 'block'; w.style.background = '#fef2f2'; w.style.borderColor = 'var(--bad)'; w.style.color = 'var(--bad)';
+    w.innerHTML = '🏪 ' + T('আজকের জন্য ক্লিনিক বন্ধ হয়ে গেছে (ক্লোজিং: ' + t12(hh.close) + ')। কাল বা অন্য তারিখ বুক করুন।', 'Clinic has closed for today (closing: ' + t12(hh.close) + '). Book for tomorrow or another date.');
+  } else if(st.state === 'before_open'){
+    w.style.display = 'block'; w.style.background = '#fffbeb'; w.style.borderColor = 'var(--sun)'; w.style.color = '#92400e';
+    w.innerHTML = '⏰ ' + T('ক্লিনিক এখনো খোলেনি (খুলবে: ' + t12(hh.open) + ') — আপনি এখনই বুক করতে পারবেন।', 'Clinic hasn\'t opened yet (opens at ' + t12(hh.open) + ') — you can still book now.');
+  } else if(st.state === 'open'){
+    w.style.display = 'block'; w.style.background = '#ecfdf5'; w.style.borderColor = 'var(--ok)'; w.style.color = '#047857';
+    w.innerHTML = '🟢 ' + T('ক্লিনিক এখন খোলা আছে (' + t12(hh.open) + ' – ' + t12(hh.close) + ')', 'Clinic is open now (' + t12(hh.open) + ' – ' + t12(hh.close) + ')');
+  } else { w.style.display = 'none'; }
+}
+
+function addDays(d,n){const x=new Date(d+'T00:00:00');x.setDate(x.getDate()+n);return ds(x)}
+function txText(a){
+  if(a.txs&&a.txs.length)return a.txs.map(t=>{const r=R(t.id);return r?esc(rn(r))+(t.qty>1?' x'+t.qty:''):''}).filter(Boolean).join(', ');
+  if(a.tx){const r=R(a.tx);return r?esc(rn(r)):''}
+  return '';
+}
+function txEstimate(txs){
+  if(!txs || !txs.length) return {min:0, max:0};
+  let lo=0, hi=0;
+  txs.forEach(t=>{const r=R(t.id); if(!r) return; const q = t.qty||1; lo += r.min*q; hi += r.max*q;});
+  return {min:lo, max:hi};
+}
+function estText(est){ return est.max>est.min ? '₹'+est.min+' – ₹'+est.max : '₹'+est.min; }
+function calcAvgRating() {
+  if(!S.ratings || !S.ratings.length) return '5.0';
+  return (S.ratings.reduce((a,b)=>a+b, 0) / S.ratings.length).toFixed(1);
+}
+function formatDate(dateString) {
+  if(!dateString) return '';
+  const date = new Date(dateString + 'T00:00:00');
+  const today = new Date(TODAY + 'T00:00:00');
+  const tomorrow = new Date(today); tomorrow.setDate(tomorrow.getDate() + 1);
+  const options = { day: 'numeric', month: 'short', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-GB', options);
+  const isToday = date.getTime() === today.getTime();
+  const isTomorrow = date.getTime() === tomorrow.getTime();
+  if(S.lang === 'bn') {
+      if(isToday) return `আজ (${formattedDate})`;
+      if(isTomorrow) return `কাল (${formattedDate})`;
+      return formattedDate;
+  } else {
+      if(isToday) return `Today (${formattedDate})`;
+      if(isTomorrow) return `Tomorrow (${formattedDate})`;
+      return formattedDate;
+  }
+}
+function sum(txs){
+  if(!txs || !txs.length) return '';
+  let html = '<div class="card" style="margin:10px 0; text-align:left; padding:15px; background:#f8fafc; border:none">';
+  let lo=0, hi=0;
+  txs.forEach(t => {
+    const r = R(t.id); if(!r) return;
+    const q = t.qty||1;
+    html += `<div style="margin-bottom:5px;"><b>${esc(rn(r))}</b>${PT(r)&&q>1?' × '+q+T(' টি',' qty'):''}</div>`;
+    lo += r.min*q; hi += r.max*q;
+  });
+  html += `<div style="margin-top:10px; font-weight:800; color:var(--brand); font-size:16px;">${T('মোট আনুমানিক খরচ','Total Est. Cost')}: ₹${lo}${hi>lo?' - ₹'+hi:''}</div>`;
+  html += `<div class="mute" style="font-size:12px;">(${T('ওষুধ আলাদা','medicine extra')})</div></div>`;
+  return html;
+}
+
+function payStatusHtml(a){
+  if(a.paid && a.paid > 0){
+    return `<div style="margin-top:10px; padding:10px 14px; background:#ecfdf5; border:1px solid var(--ok); border-radius:10px; font-weight:700; color:#047857; display:flex; justify-content:space-between; align-items:center;">
+      <span>✅ ${T('পেমেন্ট সম্পন্ন','Payment Done')}</span>
+      <span>₹${a.paid}${a.pm?' · '+a.pm:''}</span>
+    </div>`;
+  }
+  if(a.payRequested){
+    const due = Math.max(0, (a.payReq||0) - (a.paid||0));
+    const upiId = S.info.upiId || '';
+    
+    let actionHtml = '';
+    if(a.utr) {
+      actionHtml = `<div style="margin-top:10px; font-size:13px; color:var(--ok); font-weight:700;">✅ UTR Submitted: ${esc(a.utr)}<br><span class="mute" style="font-weight:500;">${T('ডাক্তার ভেরিফাই করছেন...', 'Doctor is verifying...')}</span></div>`;
+    } else {
+      actionHtml = `
+        <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-sm" style="background:#10b981; color:#fff;" onclick="showQRPayment(${a.id})">📸 Show QR Code</button>
+          <button class="btn btn-sm outline" onclick="submitUTR(${a.id})">🔢 Enter UTR</button>
+        </div>
+      `;
+    }
+
+    return `<div style="margin-top:10px; padding:12px 14px; background:#fef3c7; border:1px solid var(--sun); border-radius:10px; font-weight:700; color:#92400e;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>💳 ${T('পেমেন্ট বাকি','Payment Pending')}</span>
+        <span>₹${due}</span>
+      </div>
+      ${actionHtml}
+    </div>`;
+  }
+  return '';
+}
+
+function showQRPayment(id) {
+  const a = S.appts.find(x => x.id === id);
+  if (!a) return;
+  const due = Math.max(0, (a.payReq||0) - (a.paid||0));
+
+  let m = document.getElementById('qr-modal');
+  if(!m) {
+    m = document.createElement('div');
+    m.id = 'qr-modal';
+    m.className = 'modal-overlay';
+    m.style.display = 'flex';
+    document.body.appendChild(m);
+  }
+  
+  m.innerHTML = `
+    <div class="modal-box" style="text-align:center;">
+      <button class="modal-close" onclick="document.getElementById('qr-modal').style.display='none'">✕</button>
+      <h3 style="margin-top:0; color:var(--brand); font-weight:800; font-size:22px;">Scan & Pay ₹${due}</h3>
+      <p class="mute" style="font-size:14px; margin-bottom:15px;">${T('যেকোনো UPI অ্যাপ (GPay, PhonePe, Paytm) দিয়ে স্ক্যান করুন।', 'Scan with any UPI App (GPay, PhonePe, Paytm).')}</p>
+      
+      <div class="qr-wrapper" id="qr-img-container">
+        ${S.info.qrCode ? `<img src="${S.info.qrCode}">` : `<div style="padding:20px; color:var(--mute);">No QR uploaded</div>`}
+      </div>
+      <div id="qr-dynamic-container"></div>
+      
+      <button class="btn btn-ok" onclick="document.getElementById('qr-modal').style.display='none'; submitUTR(${a.id})" style="width:100%; padding:15px; font-size:16px;">✅ ${T('পেমেন্ট হয়ে গেছে, UTR দিন', 'Payment Done, Enter UTR')}</button>
+    </div>
+  `;
+
+  if (S.info.upiId) {
+    document.getElementById('qr-img-container').style.display = 'none';
+    const upiUrl = `upi://pay?pa=${S.info.upiId}&pn=${encodeURIComponent(S.info.name || 'Clinic')}&am=${due}&cu=INR`;
+    const qrDiv = document.getElementById('qr-dynamic-container');
+    qrDiv.innerHTML = '';
+    new QRCode(qrDiv, {
+        text: upiUrl,
+        width: 180,
+        height: 180,
+        colorDark : "#0f172a",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.M
+    });
+    const img = qrDiv.querySelector('img') || qrDiv.querySelector('canvas');
+    if(img) {
+       img.style.borderRadius = '10px';
+       img.style.border = '5px solid #fff';
+       img.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+    }
+  }
+
+  m.style.display = 'flex';
+}
+
+async function submitUTR(id) {
+  const a = S.appts.find(x => x.id === id);
+  if (!a) return;
+  const utr = prompt(T('পেমেন্ট করার পর UTR / Transaction ID দিন:', 'Enter UTR / Transaction ID after payment:'));
+  if (!utr || utr.trim() === '') return;
+  
+  a.utr = utr.trim();
+  const ok = await save();
+  if (ok) {
+    showToast(T('✅ UTR সাবমিট হয়েছে! ডাক্তার ভেরিফাই করবেন।', '✅ UTR submitted! Doctor will verify.'));
+    render();
+  } else {
+    showToast('❌ Failed to save UTR. Try again.', true);
+  }
+}
+
+function showToast(msg, isError = false) {
+  let t = document.getElementById('toast');
+  if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }
+  t.innerHTML = msg;
+  t.style.cssText = `position:fixed; bottom:20px; left:50%; transform:translateX(-50%); padding:12px 24px; border-radius:12px; font-weight:700; color:#fff; z-index:99999; box-shadow:0 10px 30px rgba(0,0,0,0.2); font-size:14px; display:block; text-align:center; background:${isError ? 'var(--bad)' : 'var(--ok)'}; transition:all 0.3s;`;
+  clearTimeout(window._tt);
+  window._tt = setTimeout(() => { t.style.display = 'none'; }, 3500);
+}
+
+function stLabel(a){
+  const m = {
+    'Pending': T('কনফার্মেশনের অপেক্ষায়','Awaiting confirmation'),
+    'Confirmed': T('বুকিং কনফার্ম','Booking confirmed'),
+    'Waiting': T('ডাক্তার অপেক্ষায়','Doctor is waiting'),
+    'Arrived': T('ক্লিনিকে পৌঁছেছেন','Checked in'),
+    'Skipped': T('মিস হয়েছে','Missed'),
+    'In Treatment': T('চিকিৎসা চলছে','In treatment'),
+    'Done': T('সম্পন্ন','Done'),
+    'Cancelled': T('বাতিল','Cancelled'),
+    'No-show': T('আসেননি','No-show')
+  };
+  return m[a.st] || a.st;
+}
+
+function ticketState(a){
+  if(a.st === 'Done') return {k:'done', label:stLabel(a)};
+  if(['Cancelled','No-show'].includes(a.st)) return {k:'bad', label:stLabel(a)};
+  if(a.st === 'Waiting') return {k:'call', label:'🏃 ' + T('ডাক্তার অপেক্ষায়','Doctor is waiting')};
+  if(a.st === 'In Treatment') return {k:'ok', label:stLabel(a)};
+  if(a.st === 'Skipped'){
+    const r = a.reentry && a.reentry.st;
+    if(r === 'requested') return {k:'wait', label:T('অনুরোধ পাঠানো হয়েছে','Request sent')};
+    return {k:'bad', label:T('মিস হয়েছে','Missed')};
+  }
+  if(a.serial < S.now) return {k:'wait', label:T('অপেক্ষায়','Waiting')};
+  if(a.serial === S.now) return {k:'ok', label:T('আপনার পালা','Your turn')};
+  return {k:'wait', label:stLabel(a)};
+}
+
+async function askReentry(id){
+  const a = S.appts.find(x => x.id === id); if(!a) return;
+  if(a.reentry && a.reentry.st === 'requested') return;
+  const prev = a.reentry;
+  a.reentry = {st:'requested', at:Date.now(), serial:a.serial};
+  const ok = await save();
+  if(ok){ showToast(T('✅ ডাক্তারকে অনুরোধ পাঠানো হয়েছে।','✅ Request sent to the doctor.')); render(); }
+  else { if(prev) a.reentry = prev; else delete a.reentry; showToast(T('❌ পাঠানো যায়নি, আবার চেষ্টা করুন।','❌ Could not send. Please try again.'), true); render(); }
+}
+
+function myTicketsHtml(phone) {
+  if(!phone) return '';
+  const myAppts = S.appts.filter(a => a.phone === phone && a.date === TODAY).sort((a,b)=>a.serial-b.serial);
+  if(!myAppts.length) return '';
+  let html = `<div class="tk-wrap">
+      <div class="tk-title">🎟️ ${T('আপনার আজকের টিকিট', 'Your tickets today')}</div>
+      <div class="tk-row">`;
+  myAppts.forEach(a => {
+      const st = ticketState(a);
+      html += `<div class="tk tk-${st.k}">
+              <div class="tk-num"><small>${T('সিরিয়াল', 'Serial')}</small><b>${a.serial}</b></div>
+              <div class="tk-info">
+                <span class="tk-chip">${st.label}</span>
+                ${a.time?`<span class="tk-time">🕒 ${t12(a.time)}</span>`:''}
+              </div>
+          </div>`;
+  });
+  html += `</div>`;
+  myAppts.forEach(a => { html += payStatusHtml(a); });
+  html += `</div>`;
+  return html;
+}
+
+function qsPanel(kind, ico, title, sub, stats, extra){
+  return `<div class="qs qs-${kind}">
+    <div class="qs-head"><span class="qs-ico">${ico}</span><div><h4 class="qs-title">${title}</h4><p class="qs-sub">${sub}</p></div></div>
+    <div class="qs-stats">${stats.map(x => `<div class="qs-stat"><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}</div>
+    ${extra || ''}
+  </div>`;
+}
+
+function userNotifBanner(){
+  if(!S.me) return '';
+  const notifs = S.appts.filter(a => a.phone === S.me && a.notif && !a.notif.seen && a.date >= TODAY);
+  if(!notifs.length) return '';
+  return notifs.map(a => {
+    let detail = '';
+    if(a.notif.type === 'date' || a.notif.type === 'both'){
+      detail = `<div style="margin-top:6px; font-size:14px;">📅 ${T('নতুন তারিখ','New date')}: <b>${formatDate(a.date)}</b></div>`;
+    }
+    if(a.notif.type === 'time' || a.notif.type === 'both'){
+      detail += `<div style="margin-top:4px; font-size:14px;">🕒 ${T('নতুন সময়','New time')}: <b>${t12(a.time)}</b></div>`;
+    }
+    return `<div class="warn" style="background:#dbeafe; border-color:var(--brand); color:#1e40af; border-radius:16px; padding:18px; margin:0 auto 20px; max-width:850px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+        <div style="flex:1;">
+          <div style="font-weight:800; font-size:16px; margin-bottom:6px;">🔔 ${T('আপনার অ্যাপয়েন্টমেন্ট পরিবর্তন হয়েছে','Your appointment was changed')}</div>
+          ${detail}
+        </div>
+        <button onclick="dismissNotif(${a.id})" style="background:#1e40af; color:#fff; border:none; padding:8px 14px; border-radius:10px; font-weight:700; cursor:pointer; font-family:inherit;">${T('ঠিক আছে','OK')}</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function dismissNotif(id){
+  const a=S.appts.find(x=>x.id===id);
+  if(a && a.notif){ a.notif.seen = true; save(); render(); }
+}
+function turn(){
+  if(!S.me) return `<div class="mute" style="text-align:center;">${T('আজকের জন্য কোনো সিরিয়াল পাওয়া যায়নি।', 'No active serial found for today.')}</div>`;
+  const myApptsToday = S.appts.filter(a => a.phone === S.me && a.date === TODAY).sort((a,b)=>a.serial-b.serial);
+  if(!myApptsToday.length) {
+      const futureAppts = S.appts.filter(a => a.phone === S.me && a.date > TODAY).sort((a,b)=>a.date.localeCompare(b.date));
+      if (futureAppts.length > 0) {
+          const fa = futureAppts[0];
+          return `<div style="text-align:center; padding:15px; background:rgba(14, 165, 233, 0.1); border-radius:12px; border:1px solid var(--brand);">
+                    <div style="font-weight:700; color:var(--brand); font-size:16px;">📅 ${T('আপনার পরবর্তী অ্যাপয়েন্টমেন্ট', 'Your next appointment')}</div>
+                    <div style="font-size:16px; color:var(--ink); margin-top:4px; font-weight:800;">${formatDate(fa.date)}</div>
+                    <div style="font-size:14px; color:var(--mute); margin-top:2px;">${T('সিরিয়াল', 'Serial')} #${fa.serial}${fa.time?' · '+t12(fa.time):''}</div>
+                    ${fa.payRequested && !fa.utr ? `<div style="margin-top:10px; padding:8px 12px; background:#fef3c7; border-radius:8px; color:#92400e; font-size:13px; font-weight:700;">💳 ${T('পেমেন্ট বাকি','Payment Pending')}: ₹${Math.max(0,(fa.payReq||0)-(fa.paid||0))}</div>`:''}
+                  </div>`;
+      }
+      return `<div class="mute" style="text-align:center;">${T('আজকের জন্য কোনো সিরিয়াল পাওয়া যায়নি।', 'No active serial found for today.')}</div>`;
+  }
+  const allDone = myApptsToday.every(a => a.st === 'Done');
+  const allCancelled = myApptsToday.every(a => ['Cancelled','No-show'].includes(a.st));
+  if(allCancelled) {
+      return `<div style="text-align:center;"><div class="badge badge-danger">❌ ${T('বুকিং বাতিল', 'Booking Cancelled')}</div><div class="mute" style="margin-top:8px;">${T('রিসেপশনে যোগাযোগ করুন।', 'Please contact reception.')}</div></div>`;
+  }
+  if(allDone) {
+      return `<div style="text-align:center;">
+                <div class="badge badge-success" style="font-size:14px; margin-bottom:10px;">✅ ${T('সব চিকিৎসা সম্পন্ন', 'All Treatments Complete')}</div>
+                <div style="font-size:16px; font-weight:700; margin-bottom:10px; color:#fff;">${T('আপনার অভিজ্ঞতা কেমন ছিল?', 'How was your experience?')}</div>
+                <div style="display:flex; justify-content:center; gap:8px; font-size:32px; cursor:pointer;" onclick="rateDoc()">
+                  <span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span>
+                </div>
+              </div>`;
+  }
+  if(S.onBreak) {
+    return `<div style="text-align:center; padding:15px; background:rgba(245,158,11,0.2); border-radius:12px; border:1px solid #f59e0b;">
+              <div style="font-weight:700; color:#fbbf24; font-size:16px;">☕ ${T('ডাক্তার ছোট্ট বিরতিতে আছেন।', 'Doctor is on a short break.')}</div>
+            </div>`;
+  }
+  const emergencyOngoing = S.appts.find(a => a.date === TODAY && a.isEmergency && a.st === 'In Treatment');
+  let html = '';
+  if (emergencyOngoing && !myApptsToday.find(a => a.id === emergencyOngoing.id)) {
+      html += `<div style="text-align:center; padding:15px; background:rgba(239,68,68,0.2); border-radius:12px; border:1px solid #ef4444; margin-bottom:15px;">
+                <div style="font-weight:700; color:#fca5a5; font-size:16px;">🚨 ${T('ইমার্জেন্সি রোগীর চিকিৎসা চলছে', 'Emergency Case in Progress')}</div>
+              </div>`;
+  }
+  const activeTickets = myApptsToday.filter(a => !['Done', 'Cancelled', 'No-show'].includes(a.st));
+  const now = S.now;
+  const calling = activeTickets.find(a => a.st === 'Waiting');
+  const inTx = activeTickets.find(a => a.st === 'In Treatment');
+  const missed = activeTickets.filter(a => a.st === 'Skipped');
+  const rest = activeTickets.filter(a => !['Waiting', 'In Treatment', 'Skipped'].includes(a.st));
+  const upcoming = rest.filter(a => a.serial >= now);
+  const passed = rest.filter(a => a.serial < now);
+  const L_YOURS = T('আপনার সিরিয়াল','Your serial');
+  const L_NOW = T('এখন চলছে','Now serving');
+  const callLink = (alt) => S.info.phone ? `<a class="qs-btn${alt ? ' alt' : ''}" href="tel:+91${S.info.phone}">📞 ${T('ক্লিনিকে ফোন করুন','Call the clinic')}</a>` : '';
+  const reqState = a => (a.reentry && a.reentry.st) || '';
+  const unconfirmed = a => a.st === 'Pending' ? ' ' + T('(বুকিং এখনও কনফার্ম হয়নি।)','(Your booking is not confirmed yet.)') : '';
+  let panel = '';
+  if (calling) {
+      panel = qsPanel('call', '🏃', T('ডাক্তার আপনার জন্য অপেক্ষা করছেন', 'The doctor is waiting for you'),
+        T('দয়া করে এখনই চেম্বারে আসুন।', 'Please come in right away.'),
+        [[L_YOURS, calling.serial]]);
+  } else if (inTx) {
+      panel = qsPanel('treat', '🦷', T('আপনার চিকিৎসা চলছে', 'Your treatment is in progress'),
+        T('ডাক্তার এখন আপনাকে দেখছেন।', 'The doctor is with you now.'),
+        [[L_YOURS, inTx.serial]]);
+  } else if (upcoming[0] && upcoming[0].serial === now) {
+      panel = qsPanel('turn', '🔔', T('আপনার নম্বর এসে গেছে!', 'It\'s your turn!'),
+        T('এখনই ডাক্তারের কাছে যান।', 'Please go in to the doctor now.'),
+        [[L_YOURS, upcoming[0].serial]]);
+  } else if (upcoming[0]) {
+      const mine = upcoming[0].serial;
+      const activeList = S.appts.filter(a => a.date === TODAY && !['Done', 'Cancelled', 'No-show'].includes(a.st));
+      const peopleAhead = activeList.filter(a => a.serial > now && a.serial < mine).length;
+      if (peopleAhead === 0) {
+          panel = qsPanel('next', '⏳', T('পরের নম্বর আপনার', 'You are next'),
+            T('প্রস্তুত থাকুন, একটু পরেই আপনার ডাক পড়বে।', 'Please get ready — you will be called shortly.') + unconfirmed(upcoming[0]),
+            [[L_YOURS, mine], [L_NOW, now]]);
+      } else {
+          panel = qsPanel('wait', '🕒',
+            T(`আপনার আগে ${peopleAhead} জন আছেন`, peopleAhead === 1 ? '1 person is ahead of you' : `${peopleAhead} people are ahead of you`),
+            T('এই পেজ নিজে থেকেই আপডেট হয়, রিফ্রেশ করতে হবে না।', 'This page updates live — no need to refresh.') + unconfirmed(upcoming[0]),
+            [[L_YOURS, mine], [T('আপনার আগে','People ahead'), peopleAhead]]);
+      }
+  } else if (passed[0]) {
+      panel = qsPanel('wait', '🕒', T('অনুগ্রহ করে কাছাকাছি থাকুন', 'Please stay nearby'),
+        T('আপনার সিরিয়াল এখনও চালু আছে। ডাক্তার একটু পরেই আপনাকে ডাকবেন।', 'Your serial is still active. The doctor will call you shortly.'),
+        [[L_YOURS, passed[0].serial], [L_NOW, now]], callLink(true));
+  } else if (missed.length) {
+      const m = missed[0];
+      const nums = missed.map(a => a.serial).join(', ');
+      const stats = [[L_YOURS, nums], [L_NOW, now]];
+      const askBtn = `<button class="qs-btn" onclick="askReentry(${m.id})">🙋 ${T('ডাক্তারকে আবার ডাকতে অনুরোধ করুন','Ask the doctor to call me in')}</button>`;
+      if (reqState(m) === 'requested') {
+          panel = qsPanel('wait', '📨', T('ডাক্তারকে অনুরোধ পাঠানো হয়েছে', 'Request sent to the doctor'),
+            T('এই পেজেই অপেক্ষা করুন — ডাক্তার সাড়া দিলেই এখানে জানানো হবে।', 'Please stay on this page — we will show the doctor\'s reply here as soon as it comes.'),
+            stats, callLink(true));
+      } else if (reqState(m) === 'declined') {
+          panel = qsPanel('miss', '🙏', T('ডাক্তার এখন আপনাকে নিতে পারছেন না', 'The doctor cannot take you in right now'),
+            T('রিসেপশনে কথা বলুন, অথবা আবার অনুরোধ পাঠাতে পারেন।', 'Please speak to the reception desk, or send the request again.'),
+            stats, askBtn + callLink(true));
+      } else {
+          panel = qsPanel('miss', '⏰', T('আপনার সিরিয়াল চলে গেছে', 'You missed your turn'),
+            T(`সিরিয়াল ${nums} ডাকা হয়ে গেছে। চিন্তা নেই — ডাক্তারকে অনুরোধ পাঠান। ডাক্তার ফ্রি থাকলে এখানেই “ডাক্তার অপেক্ষা করছেন” দেখাবে।`, `Serial ${nums} has already been called. Don't worry — send a request to the doctor. If the doctor is free, you will see "The doctor is waiting for you" here.`),
+            stats, askBtn + callLink(true));
+      }
+  }
+  if ((upcoming.length || passed.length) && missed.length) {
+      const m = missed[0];
+      panel += `<div class="qs-note">⏰ ${T('মিস হয়েছে','Missed')}: #${missed.map(a => a.serial).join(', #')} — ${reqState(m) === 'requested' ? T('অনুরোধ পাঠানো হয়েছে।','request sent to the doctor.') : `<button class="qs-linkbtn" onclick="askReentry(${m.id})">${T('ডাক্তারকে অনুরোধ করুন','Ask the doctor')}</button>`}</div>`;
+  }
+  html += panel + myTicketsHtml(S.me);
+  return html;
+}
+function rateDoc() {
+  if(!S.me) return;
+  const myAppts = S.appts.filter(a => a.phone === S.me && a.date === TODAY);
+  myAppts.forEach(a => a.rated = true);
+  S.ratings.push(5); save(); render(); 
+  alert(T('৫ স্টার রেটিং দেওয়ার জন্য ধন্যবাদ!', 'Thanks for 5 star rating!'));
+}
+function togL(){S.lang=S.lang==='bn'?'en':'bn';save();render()}
+function selectPay(val) {
+  document.getElementById('pay-clinic').classList.remove('active');
+  document.getElementById('pay-online').classList.remove('active');
+  document.getElementById('pay-'+val).classList.add('active');
+  document.querySelector(`input[name="bpay"][value="${val}"]`).checked = true;
+}
+let gallerySwiperInstance = null;
+let teamSwiperInstance = null;
+
+function initSwipers() {
+  if (typeof Swiper === 'undefined') return;
+  
+  if (gallerySwiperInstance) gallerySwiperInstance.destroy(true, true);
+  const galEl = document.querySelector(".gallerySwiper");
+  if (galEl) {
+    gallerySwiperInstance = new Swiper(".gallerySwiper", {
+      centeredSlides: true, slidesPerView: "auto", spaceBetween: 20,
+      loop: true, 
+      autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      navigation: { nextEl: ".gallerySwiper .swiper-button-next", prevEl: ".gallerySwiper .swiper-button-prev" },
+      keyboard: { enabled: true, onlyInViewport: true },
+      mousewheel: { forceToAxis: true, sensitivity: 1 },
+      speed: 800,
+    });
+  }
+
+  if (teamSwiperInstance) teamSwiperInstance.destroy(true, true);
+  const teamEl = document.querySelector(".teamSwiper");
+  if (teamEl) {
+    teamSwiperInstance = new Swiper(".teamSwiper", {
+      centeredSlides: true, 
+      slidesPerView: "auto", 
+      spaceBetween: 20,
+      loop: true,
+      loopAdditionalSlides: 2,
+      autoplay: { 
+        delay: 3000, 
+        disableOnInteraction: false, 
+        pauseOnMouseEnter: true 
+      },
+      navigation: { nextEl: ".teamSwiper .swiper-button-next", prevEl: ".teamSwiper .swiper-button-prev" },
+      keyboard: { enabled: true, onlyInViewport: true },
+      mousewheel: { forceToAxis: true, sensitivity: 1 },
+      speed: 800,
+    });
+  }
+}
+
+function render(){
+  if(!S) return;
+  // ✅ FIX: Always keep S.me in sync with localStorage (defense in depth)
+  S.me = MY_PHONE;
+  document.documentElement.lang=S.lang;
+  document.getElementById('lg').textContent=S.lang==='bn'?'English':'বাংলা';
+  const brandEl = document.getElementById('brandName');
+  if (brandEl) brandEl.textContent = S.info.name || 'K.B. Dental Care';
+  
+  document.getElementById('app').innerHTML=site();
+  selectPay('clinic'); updateBookingSummary();
+  setTimeout(() => { initSwipers(); checkDateWarning(); }, 100);
+}
+
+function site(){
+  const cl=closed(TODAY);
+  const upcomingHolidays=S.holidays.filter(d=>d>TODAY).sort().slice(0,8);
+  const rows=S.rates.filter(r=>r.show);
+  const avgRating = calcAvgRating();
+  const publicGals = S.gal.filter(g=>g.perm);
+  const st = clinicDayStatus(TODAY);
+  
+  let heroStatusText = '';
+  if(st.state === 'open') heroStatusText = S.lang==='bn'?S.hero.badgeOpen_bn:S.hero.badgeOpen_en;
+  else if(st.state === 'before_open') heroStatusText = S.lang==='bn'?S.hero.badgeBeforeOpen_bn:S.hero.badgeBeforeOpen_en;
+  else if(st.state === 'after_close') heroStatusText = S.lang==='bn'?S.hero.badgeAfterClose_bn:S.hero.badgeAfterClose_en;
+  else heroStatusText = S.lang==='bn'?S.hero.badgeClosed_bn:S.hero.badgeClosed_en;
+  
+  const heroStatusCls = (st.state === 'open' || st.state === 'before_open') ? 'ok' : 'bad';
+  const defDate = defaultBookingDate();
+  
+  let displayTeam = [];
+  if(S.team && S.team.length > 0) {
+    displayTeam = [...S.team];
+    if(displayTeam.length < 5) {
+      displayTeam = [...displayTeam, ...S.team, ...S.team]; 
+    }
+  }
+  
+  return `
+  <section id="home" class="hero">
+    <div class="hero-text-col">
+      <span class="pill ${heroStatusCls}" style="margin-bottom:20px; padding:8px 20px; font-size:14px; box-shadow:var(--shadow-sm); width:fit-content;">${heroStatusText}</span>
+      
+      <h1>
+        ${S.lang==='bn'?S.hero.t1_bn:S.hero.t1_en}<br>
+        <span>${S.lang==='bn'?S.hero.t2_bn:S.hero.t2_en}</span>
+      </h1>
+      
+      <p>${S.lang==='bn'?S.hero.sub_bn:S.hero.sub_en}</p>
+      
+      <div class="hero-actions">
+        <a class="btn" href="#book">${S.lang==='bn'?S.hero.btnB_bn:S.hero.btnB_en}</a>
+        <a class="btn outline" href="tel:+91${S.info.phone}">${S.lang==='bn'?S.hero.btnC_bn:S.hero.btnC_en}</a>
+      </div>
+      
+      <div class="live-card">
+        <div class="live-top">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="live-indicator"></div>
+            <div class="now-serving-text">${T('এখন চলছে', 'Now Running')}</div>
+          </div>
+          <div class="now-serving-number" id="nowN">${S.now}</div>
+        </div>
+        <div id="turn" class="turn-msg">${turn()}</div>
+      </div>
+    </div>
+    <div class="hero-image-col">
+      <div class="hero-image-wrapper">
+        ${S.doc ? `<img src="${S.doc}" alt="Doctor" style="object-position: center ${S.docPos}%;">` : `<div style="width:100%; height:100%; display:flex; justify-content:center; align-items:center; font-size:100px;">🦷</div>`}
+        <div class="doctor-overlay">
+          <h3>${S.lang==='bn'?esc(S.docInfo.name_bn):esc(S.docInfo.name_en)}</h3>
+          <p>${S.lang==='bn'?esc(S.docInfo.sub_bn):esc(S.docInfo.sub_en)}</p>
+          <p style="font-size:12px; margin-top:4px; opacity:0.8;">${S.lang==='bn'?esc(S.docInfo.college_bn):esc(S.docInfo.college_en)}</p>
+          <div class="doc-rating">⭐⭐⭐⭐⭐ ${avgRating}/5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>${T('অনলাইন সিরিয়াল বুকিং', 'Online Serial Booking')}</h2>
+    <p class="section-subtitle">${T('তারিখ বেছে নিন — সময় ডাক্তার নিজে নির্ধারণ করে দেবেন।', 'Pick a date — the doctor will assign the time.')}</p>
+    
+    ${userNotifBanner()}
+    
+    ${upcomingHolidays.length ? `
+      <div class="warn" style="max-width:850px; margin: 0 auto 24px; background:#fef3c7; border-color:#f59e0b; color:#92400e; border-radius:16px; padding:20px;">
+        <div style="font-size:16px; font-weight:800; margin-bottom:10px;">📢 ${T('আসন্ন ছুটি','Upcoming Holidays')}</div>
+        ${upcomingHolidays.map(d => `
+          <div style="padding:10px 0; border-top:1px dashed rgba(146,64,14,0.25); font-weight:600; font-size:14px;">
+            🚫 ${holDateText(d)}${holLabel(d) ? ' <span style="opacity:0.85;">— '+esc(holLabel(d))+'</span>' : ''}
+          </div>
+        `).join('')}
+        <div class="mute" style="font-size:12px; margin-top:10px; color:#92400e;">${T('উপরের তারিখগুলোতে ক্লিনিক বন্ধ থাকবে।','The clinic will be closed on the above dates.')}</div>
+      </div>
+    ` : ''}
+    
+    <div class="form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bn">${T('আপনার নাম', 'Your Name')}</label>
+          <input id="bn" autocomplete="name" placeholder="${T('পুরো নাম লিখুন', 'Enter full name')}">
+        </div>
+        <div class="form-group">
+          <label for="bp">${T('ফোন নম্বর', 'Phone Number')}</label>
+          <input id="bp" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="9876543210">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bd">${T('তারিখ', 'Date')}</label>
+          <input id="bd" type="date" min="${TODAY}" value="${defDate}" onchange="checkDateWarning()">
+          <div id="dateWarning" style="display:none; margin-top:8px; padding:10px 12px; border-radius:10px; border:1px solid var(--line); font-size:13px; font-weight:600; line-height:1.5;"></div>
+        </div>
+        <div class="form-group">
+          <label for="bm">${T('সমস্যা (ঐচ্ছিক)', 'Problem (Optional)')}</label>
+          <input id="bm" placeholder="${T('যেমন: দাঁতে ব্যথা', 'e.g. Toothache')}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="font-size: 18px; margin-bottom: 16px; color: var(--ink); font-weight:800;">${T('কী কী চিকিৎসা প্রয়োজন?', 'Which treatments do you need?')}</label>
+        <div class="tx-list-container">
+          ${rows.filter(r=>r.id!=9).map(r=>`
+            <div class="tx-item ${B_TX.has(r.id)?'selected':''}" id="tx-item-${r.id}">
+              <div class="tx-header" onclick="document.getElementById('chk-${r.id}').click()">
+                <input type="checkbox" class="tx-check" id="chk-${r.id}" ${B_TX.has(r.id)?'checked':''} onchange="toggleBTx(${r.id}, this.checked)" onclick="event.stopPropagation()">
+                <div class="tx-info">
+                  <span class="tx-name">${esc(rn(r))}</span>
+                  <span class="tx-price">${rt(r)}</span>
+                </div>
+              </div>
+              ${PT(r)?`
+                <div class="tx-qty-area" onclick="event.stopPropagation()">
+                  <span class="qty-label">${T('কয়টি দাঁত?', 'How many teeth?')}</span>
+                  <div class="premium-stepper">
+                    <button type="button" class="step-btn" onclick="changeQty(${r.id}, -1)">−</button>
+                    <input type="text" class="step-input" id="qty-val-${r.id}" value="${B_TX.get(r.id)||1}" readonly>
+                    <button type="button" class="step-btn" onclick="changeQty(${r.id}, 1)">+</button>
+                  </div>
+                </div>
+              `:''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div id="booking-summary" class="summary-box"></div>
+
+      <div class="form-group" style="margin-bottom:12px">
+        <label style="font-size: 18px; margin-bottom: 16px; color: var(--ink); font-weight:800;">${T('পেমেন্ট পদ্ধতি', 'Payment Method')}</label>
+        <div class="payment-grid">
+          <label class="pay-card active" id="pay-clinic" onclick="selectPay('clinic')">
+            <input type="radio" name="bpay" value="clinic" checked>
+            <span class="pay-icon">💵</span>
+            <span class="pay-title">${T('ক্লিনিকে দেব', 'Pay at Clinic')}</span>
+            <span class="mute" style="font-size: 13px;">${T('নগদ বা UPI', 'Cash or UPI')}</span>
+          </label>
+          <label class="pay-card" id="pay-online" onclick="selectPay('online')">
+            <input type="radio" name="bpay" value="online">
+            <span class="pay-icon">💳</span>
+            <span class="pay-title">${T('অনলাইনে', 'Pay Online')}</span>
+            <span class="mute" style="font-size: 13px;">${T('অগ্রিম ₹'+ADV(), 'Advance ₹'+ADV())}</span>
+          </label>
+        </div>
+      </div>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="bc"> 
+        <span>${T('আমি ক্লিনিককে অ্যাপয়েন্টমেন্টের জন্য আমার নম্বর ব্যবহার করার অনুমতি দিচ্ছি।', 'I allow the clinic to use my number for appointments.')}</span>
+      </label>
+      
+      <p id="berr" class="error-text"></p>
+      
+      <button class="btn" onclick="book()" style="width:100%; padding:20px; font-size:20px; border-radius:16px;">${T('সিরিয়াল বুক করুন', 'Book Serial')}</button>
+      
+      ${CONF && !document.getElementById('pay-modal').style.display !== 'flex' ? `<div class="ok-box" role="status" style="background: #fff; border: 2px solid var(--ok); text-align: center; margin-top: 30px;">
+        <h3 style="color:var(--ok); margin-top:0">${T('সফলভাবে বুক হয়েছে!', 'Successfully Booked!')}</h3>
+        <p style="font-size:18px; font-weight:700; color:var(--ink);">${esc(CONF.name)}</p>
+        <div style="font-size:16px; font-weight:800; color:var(--brand); margin: 5px 0 15px 0;">${formatDate(CONF.date)}</div>
+        <div style="margin:20px 0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <div style="min-width:110px; background:#e0f2fe; border:1px solid var(--brand); padding:12px; border-radius:12px;">
+            <div style="font-size:12px; color:var(--mute); text-transform:uppercase; font-weight:700;">${T('সিরিয়াল', 'Serial')}</div>
+            <div style="font-size:30px; font-weight:800; color:var(--brand); line-height:1.2;">${CONF.serial}</div>
+          </div>
+          <div style="min-width:110px; background:#ecfdf5; border:1px solid var(--ok); padding:12px; border-radius:12px;">
+            <div style="font-size:12px; color:var(--mute); text-transform:uppercase; font-weight:700;">${T('নির্ধারিত সময়', 'Scheduled Time')}</div>
+            <div style="font-size:22px; font-weight:800; color:var(--ok); line-height:1.7;">${CONF.time?t12(CONF.time):'—'}</div>
+          </div>
+        </div>
+        
+        ${sum(CONF.txs)}
+      </div>`:''}
+    </div>
+    
+    <div class="card" style="max-width:850px; margin:30px auto 0; background:var(--brand-light); border-color:var(--brand-light)">
+      <h3 style="margin-top:0; color:var(--brand); font-weight:800;">${T('আমার সিরিয়াল দেখুন', 'Check My Serial')}</h3>
+      <div class="row" style="margin-top:10px">
+        <input id="cp" value="${S.me || ''}" inputmode="numeric" maxlength="10" placeholder="${T('ফোন নম্বর দিন', 'Enter phone number')}" style="flex:1; min-width:200px; margin:0; background:#fff; border-color:transparent;">
+        <button class="btn" onclick="chk()" style="margin:0">${T('দেখুন', 'Check')}</button>
+      </div>
+      <div id="cr">${CHK===null?'':chkHtml()}</div>
+    </div>
+  </section>
+
+  ${displayTeam.length > 0 ? `
+  <section id="team">
+    <h2>${T('আমাদের ডাক্তার ও টিম', 'Our Doctors & Team')}</h2>
+    <p class="section-subtitle">${T('আমাদের দক্ষ ও অভিজ্ঞ মেডিকেল টিম। কার্ডে ক্লিক করে বিস্তারিত জানুন।', 'Our skilled and experienced medical team. Click card for details.')}</p>
+    
+    <div class="swiper teamSwiper">
+      <div class="swiper-wrapper">
+        ${displayTeam.map((m, idx) => `
+          <div class="swiper-slide">
+            <div class="team-card" onclick="this.classList.toggle('expanded')">
+              <div class="team-img-wrapper">
+                ${m.photo ? `<img src="${m.photo}" alt="${esc(m.name_en)}">` : `<div style="font-size:80px; opacity:0.3;">👨‍⚕️</div>`}
+              </div>
+              <div class="team-info">
+                <h3>${S.lang==='bn'?esc(m.name_bn):esc(m.name_en)}</h3>
+                <p class="role">${S.lang==='bn'?esc(m.role_bn):esc(m.role_en)}</p>
+                <div class="team-details">
+                  <p>${S.lang==='bn'?esc(m.details_bn||''):esc(m.details_en||'')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+  ` : ''}
+
+  ${publicGals.length > 0 ? `
+  <section id="gallery">
+    <h2>${T('ক্লিনিকের ছবি', 'Clinic Gallery')}</h2>
+    <div class="swiper gallerySwiper">
+      <div class="swiper-wrapper">
+        ${publicGals.map(g=>`<div class="swiper-slide"><img src="${g.src}" alt="Clinic Image"></div>`).join('')}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>` : ''}
+
+  <section id="contact">
+    <h2>${T('যোগাযোগ ও ঠিকানা', 'Contact & Location')}</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="info-row"><div class="info-icon">📍</div><div class="info-text"><h4>${T('ঠিকানা', 'Address')}</h4><p style="white-space: pre-line;">${esc(S.info.addr)}</p></div></div>
+        <div class="info-row"><div class="info-icon">🕒</div><div class="info-text"><h4>${T('সময়', 'Timing')}</h4><p>${esc(S.info.time)}</p><p class="mute" style="font-size:14px; margin-top:4px;">${T('বন্ধ', 'Closed')}: ${esc(S.info.closed)}</p></div></div>
+        <div class="info-row"><div class="info-icon">📞</div><div class="info-text"><h4>${T('ফোন', 'Phone')}</h4><p><a href="tel:+91${S.info.phone}" style="color:var(--brand); text-decoration:none;">+91 ${esc(S.info.phone)}</a></p></div></div>
+      </div>
+      <div class="map-container">
+        ${S.info.mapUrl ? `<iframe src="${S.info.mapUrl}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` : `<div style="text-align:center; padding:20px;"><div style="font-size:40px; margin-bottom:10px;">🗺️</div><p class="mute">${T('Google Map যুক্ত করা হয়নি।', 'Google Map not configured.')}</p></div>`}
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ${ (S.social && (S.social.whatsapp?.active || S.social.insta?.active || S.social.fb?.active)) ? `
+      <div class="social-links">
+        ${S.social.whatsapp?.active && S.social.whatsapp.link ? `<a href="${esc(S.social.whatsapp.link)}" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>` : ''}
+        ${S.social.insta?.active && S.social.insta.link ? `<a href="${esc(S.social.insta.link)}" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>` : ''}
+        ${S.social.fb?.active && S.social.fb.link ? `<a href="${esc(S.social.fb.link)}" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>` : ''}
+      </div>
+    ` : ''}
+
+    <div class="footer-title">${esc(S.info.name || 'K.B. Dental Care')}</div>
+    <p>${T('সুন্দর হাসির জন্য আপনার নির্ভরযোগ্য ঠিকানা।', 'Your trusted destination for a beautiful smile.')}</p>
+    <p class="mute" style="margin-top:30px; font-size:13px; border-top: 1px solid #e2e8f0; padding-top: 20px;">&copy; ${new Date().getFullYear()} ${esc(S.info.name || 'K.B. Dental Care')}. All Rights Reserved.</p>
+  </footer>`;
+}
+
+function toggleBTx(id, isChecked) {
+  const item = document.getElementById('tx-item-'+id);
+  if(isChecked) {
+    B_TX.set(id, B_TX.get(id) || 1);
+    item.classList.add('selected');
+    const qv = document.getElementById('qty-val-'+id); if(qv) qv.value = B_TX.get(id);
+  } else {
+    B_TX.delete(id);
+    item.classList.remove('selected');
+  }
+  updateBookingSummary();
+}
+function changeQty(id, change) {
+  let current = B_TX.get(id) || 1;
+  let newVal = Math.max(1, Math.min(32, current + change));
+  B_TX.set(id, newVal);
+  const input = document.getElementById('qty-val-'+id);
+  if(input) input.value = newVal;
+  updateBookingSummary();
+}
+function updateBookingSummary() {
+  const el = document.getElementById('booking-summary');
+  if(!el) return;
+  if(B_TX.size === 0) {
+    el.innerHTML = `<span class="mute" style="display:flex; justify-content:center;">${T('কোনো চিকিৎসা সিলেক্ট করা হয়নি', 'No treatment selected')}</span>`;
+    return;
+  }
+  let html = `<span class="summary-title">${T('সিলেক্ট করা চিকিৎসা:', 'Selected Treatments')}</span>`;
+  let lo=0, hi=0;
+  B_TX.forEach((qty, id) => {
+    const r = R(id);
+    if(!r) return;
+    const q = qty || 1;
+    html += `<div class="summary-row"><span>${esc(rn(r))} ${PT(r)&&q>1?' × '+q:''}</span> <span><b>${fmt(r, q)}</b></span></div>`;
+    lo += r.min * q; hi += r.max * q;
+  });
+  html += `<div class="summary-total"><span>${T('মোট:', 'Total:')}</span> <span>₹${lo}${hi>lo?' - ₹'+hi:''}</span></div>`;
+  el.innerHTML = html;
+}
+
+function book(){
+  const g=i=>document.getElementById(i),er=g('berr');
+  const name=g('bn').value.trim(),phone=g('bp').value.trim(),date=g('bd').value;
+  er.style.display='none';
+  er.style.background = '#fef2f2';
+  er.style.borderColor = 'var(--bad)';
+  er.style.color = 'var(--bad)';
+  
+  if(!name){er.textContent='⚠️ '+T('অনুগ্রহ করে নাম লিখুন।', 'Please enter your name.');er.style.display='block';return;}
+  if(!/^\d{10}$/.test(phone)){er.textContent='⚠️ '+T('১০ সংখ্যার সঠিক ফোন নম্বর দিন।', 'Enter a valid 10-digit phone number.');er.style.display='block';return;}
+  if(!date||date<TODAY){er.textContent='⚠️ '+T('সঠিক তারিখ দিন।', 'Choose a valid date.');er.style.display='block';return;}
+  
+  const st = clinicDayStatus(date);
+  if(st.state === 'closed' || st.state === 'after_close'){
+    const r = noSlotReason(date, 0);
+    er.textContent = r.msg; er.style.display='block'; return;
+  }
+
+  if(B_TX.size === 0){er.textContent='⚠️ '+T('অন্তত একটি চিকিৎসা সিলেক্ট করুন।', 'Please select at least one treatment.');er.style.display='block';return;}
+  if(!g('bc').checked){er.textContent='⚠️ '+T('অনুমতির বাক্সে টিক দিন।', 'Please tick the permission box.');er.style.display='block';return;}
+  
+  const txsArray = [];
+  B_TX.forEach((qty, id) => txsArray.push({id: +id, qty: qty}));
+  const payMode = document.querySelector('input[name=bpay]:checked').value;
+  const dur = txDur(txsArray);
+  const assignedTime = getBookingTime(date);
+  const advAmt = ADV();
+
+  if (payMode === 'online') {
+    const a = {
+      id: Date.now(), name: name, phone: phone, date: date, txs: txsArray, time: assignedTime, dur: dur,
+      prob: g('bm').value.trim(), serial: Math.max(0,...S.appts.filter(x=>x.date===date).map(x=>x.serial))+1, 
+      st: 'Pending', pay: payMode, paid: 0, isEmergency: false, rated: false,
+      payRequested: true, payReq: advAmt, notif: null, utr: null,
+      createdAt: Date.now()
+    };
+    
+    setMyPhone(phone);       // ✅ FIX: Save to localStorage, not Firestore
+    CONF = a; 
+    openPaymentModal(a);
+
+  } else {
+    const a = {
+      id: Date.now(), name: name, phone: phone, date: date, txs: txsArray, time: assignedTime, dur: dur,
+      prob: g('bm').value.trim(), serial: Math.max(0,...S.appts.filter(x=>x.date===date).map(x=>x.serial))+1, 
+      st: 'Pending', pay: payMode, paid: 0, isEmergency: false, rated: false,
+      payRequested: false, payReq: 0, notif: null, utr: null,
+      createdAt: Date.now()
+    };
+    
+    setMyPhone(phone);       // ✅ FIX: Save to localStorage, not Firestore
+    S.appts.push(a); save(); 
+    CONF = a; B_TX.clear(); 
+    render();
+    showToast(T('✅ বুকিং সফলভাবে সম্পন্ন হয়েছে!', '✅ Booking successful!'));
+  }
+}
+
+function openPaymentModal(a) {
+  const modal = document.getElementById('pay-modal');
+  const advAmt = a.payReq;
+  
+  document.getElementById('pay-amount').innerText = '₹' + advAmt;
+  
+  if (S.info.upiId) {
+    const upiUrl = `upi://pay?pa=${S.info.upiId}&pn=${encodeURIComponent(S.info.name || 'Clinic')}&am=${advAmt}&cu=INR`;
+    document.getElementById('upi-app-link').href = upiUrl;
+    document.getElementById('upi-app-section').style.display = 'block';
+  } else {
+    document.getElementById('upi-app-section').style.display = 'none';
+  }
+
+  const qrSection = document.getElementById('qr-section');
+  const qrContainer = document.getElementById('qrcode-container');
+  
+  if (S.info.upiId) {
+    qrSection.style.display = 'block';
+    qrContainer.innerHTML = '';
+    
+    new QRCode(qrContainer, {
+      text: `upi://pay?pa=${S.info.upiId}&pn=${encodeURIComponent(S.info.name || 'Clinic')}&am=${advAmt}&cu=INR`,
+      width: 180,
+      height: 180,
+      colorDark : "#0f172a",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.M
+    });
+  } else if (S.info.qrCode) {
+    qrSection.style.display = 'block';
+    qrContainer.innerHTML = `<img src="${S.info.qrCode}">`;
+  } else {
+    qrSection.style.display = 'none';
+  }
+
+  document.getElementById('utr-input').value = '';
+  modal.style.display = 'flex';
+}
+
+async function confirmPayment() {
+  const a = CONF;
+  if(!a) return;
+  
+  const utrInput = document.getElementById('utr-input').value.trim();
+  if(!utrInput) {
+    alert(T('অনুগ্রহ করে UTR নম্বরটি দিন।', 'Please enter the UTR number.'));
+    return;
+  }
+
+  a.utr = utrInput;
+  S.appts.push(a); 
+  await save(); 
+  
+  B_TX.clear(); 
+  document.getElementById('pay-modal').style.display = 'none';
+  
+  render();
+  showToast(T('✅ পেমেন্ট UTR সাবমিট হয়েছে এবং বুকিং কনফার্ম হয়েছে!', '✅ UTR submitted and booking confirmed!'));
+}
+
+function cancelPayment() {
+  document.getElementById('pay-modal').style.display = 'none';
+  CONF = null;
+  showToast(T('পেমেন্ট বাতিল করা হয়েছে। বুকিং সম্পন্ন হয়নি।', 'Payment cancelled. Booking not completed.'), true);
+  render();
+}
+
+// ✅ FIX: chk() no longer saves 'me' to Firestore - only to localStorage
+function chk(){
+  const p=document.getElementById('cp').value.trim();
+  if(!/^\d{10}$/.test(p)){ alert(T('সঠিক ১০ সংখ্যার নম্বর দিন।', 'Enter a valid 10 digit number.')); return; }
+  setMyPhone(p);              // ✅ Save to localStorage only
+  CHK=S.appts.filter(a=>a.phone===p&&a.date>=TODAY);
+  render();
+  document.getElementById('cp').value=p;
+}
+function chkHtml(){
+  return CHK.length ? CHK.map(a=>{
+    const txsList = a.txs && a.txs.length ? a.txs : [];
+    const txLine = txsList.length ? txsList.map(t=>{const r=R(t.id);return r?esc(rn(r))+(PT(r)&&t.qty>1?' ×'+t.qty:''):''}).filter(Boolean).join(', ') : '';
+    return `<div style="margin:15px 0; padding:20px; background:#fff; border-radius:12px; border-left:6px solid var(--brand); box-shadow:var(--shadow-sm);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div>
+        <div style="font-size:14px; font-weight:700; color:var(--brand); margin-bottom:4px;">${formatDate(a.date)}</div>
+        <div style="font-weight:700; font-size:15px; color:var(--ink);">${T('সিরিয়াল', 'Serial')} <span style="font-size:24px; color:var(--brand);">${a.serial}</span></div>
+        ${a.time?`<div style="font-size:14px; font-weight:700; color:var(--ink); margin-top:2px;">🕒 ${t12(a.time)}</div>`:''}
+      </div>
+      <span class="pill" style="background:var(--bg); color:var(--ink);">${stLabel(a)}</span>
+    </div>
+    ${txLine?`<div style="margin-top:10px; font-size:13px; background:#f8fafc; padding:8px 10px; border-radius:8px; color:var(--ink);"><b>🦷 ${T('চিকিৎসা','Treatment')}:</b> ${txLine}</div>`:''}
+    ${payStatusHtml(a)}
+  </div>`}).join('') 
+  : `<p class="mute" style="margin-top:15px; text-align:center;">${T('কোনো সিরিয়াল পাওয়া যায়নি।', 'No serial found.')}</p>`;
+}
+
+// ================== FIREBASE INITIALIZATION ==================
+function initFirebase() {
+  if (!window.fireDB) { setTimeout(initFirebase, 100); return; }
+
+  const timeoutId = setTimeout(() => {
+    document.getElementById('app').innerHTML = `
+      <div class="card" style="text-align:center; color:var(--bad); margin-top:50px;">
+        <h3 style="color:var(--bad);">❌ Firestore-এ কানেক্ট করা যাচ্ছে না</h3>
+        <p>অনুগ্রহ করে Firebase Console-এ Firestore Database তৈরি করেছেন কিনা এবং Security Rules ঠিক আছে কিনা চেক করুন।</p>
+        <button class="btn" onclick="location.reload()">আবার চেষ্টা করুন</button>
+      </div>
+    `;
+  }, 10000);
+
+  window.fireOnSnapshot(
+    window.fireDoc(window.fireDB, "clinicData", "main"), 
+    (docSnap) => {
+      clearTimeout(timeoutId);
+      if (docSnap.exists()) {
+        S = docSnap.data();
+        
+        if(!S.hero) S.hero = defaultState.hero;
+        if(!S.info.name) S.info.name = 'K.B. Dental Care';
+        if(S.onBreak===undefined) S.onBreak=false;
+        if(!S.holidays) S.holidays=[];
+        if(!S.holidayLabels) S.holidayLabels={};
+        if(!S.info.mapUrl) S.info.mapUrl = '';
+        if(!S.info.upiId) S.info.upiId = ''; 
+        if(!S.info.qrCode) S.info.qrCode = ''; 
+        if(!S.ratings) S.ratings = [];
+        if(S.docPos===undefined) S.docPos = 20;
+        if(!S.slotOpen) S.slotOpen='10:00';
+        if(!S.slotClose) S.slotClose='13:00';
+        if(!S.social) S.social = {};
+        if(!S.docInfo) S.docInfo = {
+          name_bn: 'ডাঃ মহম্মদ হামিদ', name_en: 'Dr. Mohammad Hamid',
+          sub_bn: 'বিডিএস (WBUHS) · এক্স-হাউস সার্জন', sub_en: 'BDS (WBUHS) · Ex-House Surgeon',
+          college_bn: 'কলকাতা ন্যাশনাল মেডিক্যাল কলেজ ও হাসপাতাল', college_en: 'Calcutta National Medical College & Hospital'
+        };
+        if(!S.team) S.team = [];
+        const DD={1:10,2:20,3:30,4:30,5:20,6:30,7:30,8:10,9:0};
+        S.rates.forEach(r=>{if(r.dur===undefined)r.dur=(DD[r.id]!==undefined?DD[r.id]:10)});
+        
+        // ✅ FIX: Restore 'me' from localStorage (NOT from Firestore)
+        S.me = MY_PHONE;
+        
+        render();
+      } else {
+        S = defaultState;
+        S.info.upiId = '';
+        S.info.qrCode = '';
+        S.social = {};
+        S.docInfo = {
+          name_bn: 'ডাঃ মহম্মদ হামিদ', name_en: 'Dr. Mohammad Hamid',
+          sub_bn: 'বিডিএস (WBUHS) · এক্স-হাউস সার্জন', sub_en: 'BDS (WBUHS) · Ex-House Surgeon',
+          college_bn: 'কলকাতা ন্যাশনাল মেডিক্যাল কলেজ ও হাসপাতাল', college_en: 'Calcutta National Medical College & Hospital'
+        };
+        S.team = [];
+        S.rates.forEach(r=>{if(r.dur===undefined)r.dur=10});
+        
+        // ✅ FIX: Restore 'me' from localStorage before save
+        S.me = MY_PHONE;
+        
+        save().then(() => render());
+      }
+    },
+    (error) => {
+      clearTimeout(timeoutId);
+      console.error("Firebase Connection Error:", error);
+      document.getElementById('app').innerHTML = `
+        <div class="card" style="text-align:center; color:var(--bad); margin-top:50px;">
+          <h3 style="color:var(--bad);">❌ কানেকশন এরর</h3>
+          <p>${error.message}</p>
+          <button class="btn" onclick="location.reload()">আবার চেষ্টা করুন</button>
+        </div>
+      `;
+    }
+  );
+}
+initFirebase();
+</script>
+</body>
+</html>
